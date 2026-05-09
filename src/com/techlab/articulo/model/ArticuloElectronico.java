@@ -30,23 +30,36 @@ package com.techlab.articulo.model;
 public class ArticuloElectronico extends Articulo {
 
     private int garantiaMeses;
+    private final int PORCENTAJE_RECARGO_GARANTIA = 10;
 
-    // TODO:
     // Crear constructor.
+    public ArticuloElectronico(int codigo, String nombre, double precio, Categoria categoria, int garantiaMeses) {
+        super(codigo, nombre, precio, categoria);
 
-    // TODO:
+        this.garantiaMeses = garantiaMeses;
+    }
+
     // Crear getters y setters.
+    public int getGarantiaMeses() {
+        return garantiaMeses;
+    }
+
+    public void setGarantiaMeses(int garantiaMeses) {
+        this.garantiaMeses = garantiaMeses;
+    }
 
     @Override
     public String getTipoArticulo() {
-        // TODO:
-        return "";
+        return "Electrónico";
     }
 
     @Override
     public double calcularPrecioFinal() {
-        // TODO:
         // Implementar lógica propia del artículo electrónico.
-        return 0;
+        if (garantiaMeses > 12) {
+            return this.getPrecio() * (100 + PORCENTAJE_RECARGO_GARANTIA) / 100;
+        }
+
+        return this.getPrecio();
     }
 }
