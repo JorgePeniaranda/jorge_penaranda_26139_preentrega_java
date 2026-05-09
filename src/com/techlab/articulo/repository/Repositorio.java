@@ -1,9 +1,7 @@
 package com.techlab.articulo.repository;
 
-import java.util.ArrayList;
-import java.util.List;
-
 import com.techlab.articulo.interfaces.Identificable;
+import java.util.List;
 
 /**
  * CONSIGNA DE ESTA CLASE
@@ -40,22 +38,19 @@ import com.techlab.articulo.interfaces.Identificable;
  * Esta clase prepara el terreno para entender luego estructuras como:
  * JpaRepository<T, ID> en Spring Boot.
  */
-public class Repositorio<T extends Identificable> {
-
-    private ArrayList<T> lista = new ArrayList<>();
-
-    // TODO:
+public interface Repositorio<T extends Identificable> {
     // Implementar método agregar.
+    public void agregar(T objeto);
 
-    // TODO:
     // Implementar método listar.
+    public List<T> listar();
 
-    // TODO:
     // Implementar método buscarPorCodigo.
+    public T buscarPorCodigo(int codigo);
 
-    // TODO:
     // Implementar método eliminar.
+    public void eliminar(T objeto);
 
-    // TODO:
     // Implementar método estaVacio.
+    public boolean estaVacio();
 }
