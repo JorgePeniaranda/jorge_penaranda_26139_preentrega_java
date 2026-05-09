@@ -27,23 +27,37 @@ package com.techlab.articulo.model;
 public class ArticuloAlimenticio extends Articulo {
 
     private int diasParaVencimiento;
+    private static final int PORCENTAJE_DESCUENTO_VENCIMIENTO = 20;
+    private static final int DIAS_UMBRAL_DESCUENTO_VENCIMIENTO = 20;
 
-    // TODO:
     // Crear constructor.
+    public ArticuloAlimenticio(int codigo, String nombre, double precio, Categoria categoria, int diasParaVencimiento) {
+        super(codigo, nombre, precio, categoria);
 
-    // TODO:
+        this.diasParaVencimiento = diasParaVencimiento;
+    }
+
     // Crear getters y setters.
+    public int getDiasParaVencimiento() {
+        return diasParaVencimiento;
+    }
+
+    public void setDiasParaVencimiento(int diasParaVencimiento) {
+        this.diasParaVencimiento = diasParaVencimiento;
+    }
 
     @Override
     public String getTipoArticulo() {
-        // TODO:
-        return "";
+        return "Alimenticio";
     }
 
     @Override
     public double calcularPrecioFinal() {
-        // TODO:
         // Implementar lógica propia del artículo alimenticio.
-        return 0;
+        if (diasParaVencimiento > DIAS_UMBRAL_DESCUENTO_VENCIMIENTO) {
+            return this.getPrecio();
+        }
+
+        return this.getPrecio() * (100 - PORCENTAJE_DESCUENTO_VENCIMIENTO) / 100;
     }
 }
