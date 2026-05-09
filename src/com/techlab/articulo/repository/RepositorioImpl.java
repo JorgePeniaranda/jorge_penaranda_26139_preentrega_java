@@ -65,9 +65,9 @@ public class RepositorioImpl<T extends Identificable> implements Repositorio<T> 
 
     // Implementar método buscarPorCodigo.
     @Override
-    public T buscarPorCodigo(int codigo) {
+    public T buscarPorCodigo(String codigo) {
         for (T objeto : lista) {
-            if (objeto.getCodigo() == codigo) {
+            if (objeto.getCodigo().equals(codigo)) {
                 return objeto;
             }
         }

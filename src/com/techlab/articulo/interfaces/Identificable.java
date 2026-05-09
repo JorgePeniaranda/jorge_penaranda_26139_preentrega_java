@@ -17,5 +17,5 @@ package com.techlab.articulo.interfaces;
 public interface Identificable {
 
     // Declarar el método getCodigo().
-    public int getCodigo();
+    public String getCodigo();
 }

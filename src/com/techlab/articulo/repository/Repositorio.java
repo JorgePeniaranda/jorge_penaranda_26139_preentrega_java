@@ -46,7 +46,7 @@ public interface Repositorio<T extends Identificable> {
     public List<T> listar();
 
     // Implementar método buscarPorCodigo.
-    public T buscarPorCodigo(int codigo);
+    public T buscarPorCodigo(String codigo);
 
     // Implementar método eliminar.
     public void eliminar(T objeto);

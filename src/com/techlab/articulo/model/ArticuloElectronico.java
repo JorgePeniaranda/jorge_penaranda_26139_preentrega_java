@@ -33,7 +33,7 @@ public class ArticuloElectronico extends Articulo {
     private final int PORCENTAJE_RECARGO_GARANTIA = 10;
 
     // Crear constructor.
-    public ArticuloElectronico(int codigo, String nombre, double precio, Categoria categoria, int garantiaMeses) {
+    public ArticuloElectronico(String codigo, String nombre, double precio, Categoria categoria, int garantiaMeses) {
         super(codigo, nombre, precio, categoria);
 
         this.garantiaMeses = garantiaMeses;

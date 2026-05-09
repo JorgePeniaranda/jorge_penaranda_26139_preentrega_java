@@ -31,7 +31,8 @@ public class ArticuloAlimenticio extends Articulo {
     private static final int DIAS_UMBRAL_DESCUENTO_VENCIMIENTO = 20;
 
     // Crear constructor.
-    public ArticuloAlimenticio(int codigo, String nombre, double precio, Categoria categoria, int diasParaVencimiento) {
+    public ArticuloAlimenticio(String codigo, String nombre, double precio, Categoria categoria,
+            int diasParaVencimiento) {
         super(codigo, nombre, precio, categoria);
 
         this.diasParaVencimiento = diasParaVencimiento;

@@ -44,13 +44,13 @@ import com.techlab.articulo.interfaces.Identificable;
  */
 public abstract class Articulo implements Calculable, Identificable {
 
-    private int codigo;
+    private String codigo;
     private String nombre;
     private double precio;
     private Categoria categoria;
 
     // Crear constructor completo.
-    public Articulo(int codigo, String nombre, double precio, Categoria categoria) {
+    public Articulo(String codigo, String nombre, double precio, Categoria categoria) {
         this.codigo = codigo;
         this.nombre = nombre;
         this.precio = precio;
@@ -59,11 +59,11 @@ public abstract class Articulo implements Calculable, Identificable {
 
     // Crear getters y setters.
     @Override
-    public int getCodigo() {
+    public String getCodigo() {
         return this.codigo;
     }
 
-    public void setCodigo(int codigo) {
+    public void setCodigo(String codigo) {
         this.codigo = codigo;
     }
 

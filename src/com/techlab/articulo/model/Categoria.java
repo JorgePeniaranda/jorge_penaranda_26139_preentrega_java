@@ -28,12 +28,12 @@ import com.techlab.articulo.interfaces.Identificable;
  */
 public class Categoria implements Identificable {
 
-    private int codigo;
+    private String codigo;
     private String nombre;
     private String descripcion;
 
     // Crear constructor.
-    public Categoria(int codigo, String nombre, String descripcion) {
+    public Categoria(String codigo, String nombre, String descripcion) {
         this.codigo = codigo;
         this.nombre = nombre;
         this.descripcion = descripcion;
@@ -41,11 +41,11 @@ public class Categoria implements Identificable {
 
     // Crear getters y setters restantes.
     @Override
-    public int getCodigo() {
+    public String getCodigo() {
         return codigo;
     }
 
-    public void setCodigo(int codigo) {
+    public void setCodigo(String codigo) {
         this.codigo = codigo;
     }
 
